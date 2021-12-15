@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="Member"> 
+	<insert id="join" parameterType="member">
+ 		insert into member_join(m_id, m_password, m_name, m_email, m_profileName) 
+ 			values(#{m_id},#{m_password},#{m_name},#{m_email},#{m_profileName})
+ 	</insert>
+ 	
+ 	<select id="idDuplicate" parameterType="String" resultType="String">
+ 		select m_id from member_join where m_id=#{m_id}
+ 	</select>
+ 	
+ 	<select id="login" parameterType="member" resultType="member">
+		select * from member_Join where m_id=#{m_id} and m_password=#{m_password}
+	</select>
+	
+	<select id="mypageId" parameterType="String" resultType="member">
+		select * from member_Join where m_id=#{m_id}	
+	</select>
+	
+	<update id="mypage" parameterType="member">
+			update member_Join set m_name=#{m_name}, m_email=#{m_email} where m_id=#{m_id}
+	</update>
+	
+	<select id="findAll" resultType="member">
+		select * from member_Join
+	</select>
+	
+	<delete id="delete" parameterType="long">
+ 		delete from member_Join where m_number=#{m_number}
+ 	</delete>
+	
+ </mapper>
