@@ -30,7 +30,7 @@ mapper
 - mybatis를 통한 연결이 필수
 
 DB
-- table : 데이터를 저장한다. 각각 member,comment,board 각각 저장하고 각자 고유 순서가 지정된다
+- table : 데이터를 저장한다. 각각 member,comment,board 각각 저장하고 각자 고유 순서가 지정된다. 
 - root -context를 통한 경로 DB지정이 필수
 
 <h2>회원관련</h2>
